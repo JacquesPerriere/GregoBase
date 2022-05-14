@@ -125,11 +125,11 @@ function mgabc2tex($c, $firstverse = False) {
 		if($c['mode'] == 'p') {
 			$mode = "T. pereg.";
 		} elseif(in_array($c['mode'], array('c','d','e'))) {
-			$mode = strtoupper($c['mode']).($c['mode_var']?' '.$c['mode_var']:'');
+			$mode = strtoupper($c['mode']).'.'.($c['mode_var']?' '.$c['mode_var']:'');
 		} else {
-			$mode = $c['mode'].($c['mode_var']?' '.$c['mode_var']:'');
+			$mode = $c['mode'].'.'.($c['mode_var']?' '.$c['mode_var']:'');
 		}
-		$tex .= '\greannotation{\small \textbf{'.$mode.".}}\n";
+		$tex .= '\greannotation{\small \textbf{'.$mode."}}\n";
 	}
 	if($c['commentary']) {
 		if(strpos($c['gabc'], '|') === false) {
